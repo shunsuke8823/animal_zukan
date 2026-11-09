@@ -1,0 +1,31 @@
+services:
+  db:
+    image: postgres:17
+    environment:
+      POSTGRES_PASSWORD: password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    # bin/dev で Rails サーバーと Tailwind の watch を同時に起動する
+    command: bash -c "rm -f tmp/pids/server.pid && bin/dev"
+    # tty がないと Tailwind の watch がすぐ終了してしまうため
+    tty: true
+    volumes:
+      - .:/animal_zukan
+      - bundle:/usr/local/bundle
+    ports:
+      - "3000:3000"
+    environment:
+      PGHOST: db
+      PGUSER: postgres
+      PGPASSWORD: password
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:
+  bundle:

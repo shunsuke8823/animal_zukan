@@ -1,6 +1,20 @@
-<div>
-  <h1 class="font-bold text-4xl">動物図鑑</h1>
-  <div class="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-10">
+<div class="m-8">
+  <h1 class="font-bold text-4xl text-center">動物図鑑</h1>
+  <div class="mt-8 grid grid-cols-2 gap-2 md:grid-cols-6 md:gap-5">
+    <%= link_to animals_path do %>
+      <div class="border-2 border-green-500 rounded-xl p-2 text-center">
+        <p class="text-2xl" >全部</p>
+      </div>
+    <% end %>
+    <% @categories.each do |category| %>
+      <%= link_to animals_path(category_id: category.id) do %>
+        <div class="border-2 border-green-500 rounded-xl p-2 text-center">
+          <p class="text-2xl" ><%= category.name %></p>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="mt-8 grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-10">
     <% @animals.each do |animal| %>
       <%= link_to animal_path(animal) do %>
         <div class="border-2 border-indigo-600 rounded-xl p-4 text-center">

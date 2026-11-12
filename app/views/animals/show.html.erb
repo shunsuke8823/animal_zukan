@@ -1,0 +1,7 @@
+<h1 class="font-bold text-4xl">動物詳細</h1>
+<p class="text-6xl"><%= @animal.emoji %></p>
+<p class="font-bold"><%= @animal.name %></p>
+<p class="text-gray-500"><%= @animal.reading %></p>
+<p class="text-gray-500"><%= @animal.category.name %></p>
+<p class="text-gray-500"><%= @animal.description %></p>
+<%= link_to "一覧へ戻る", animals_path %>

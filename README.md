@@ -22,7 +22,7 @@ https://animal-zukan.onrender.com/
 
 | 役割 | 技術名 | バージョン |
 | --- | --- | --- |
-| バックエンド言語 | Ruby | 3.4.12 |
+| バックエンド言語 | Ruby | 3.4.13 |
 | Webアプリケーションフレームワーク | Ruby on Rails | 8.1.4.1 |
 | CSSフレームワーク | Tailwind CSS | 4.3.4 | 
 | フロントエンドフレームワーク | Turbo | 2.0.23 |

@@ -1,6 +1,6 @@
 # 開発用の Dockerfile（本番用は Rails が生成した Dockerfile をそのまま残している）
 # .ruby-version と同じバージョンにそろえる
-FROM ruby:3.4.12
+FROM ruby:3.4.13
 
 # PostgreSQL に接続するためのライブラリなどを入れる
 RUN apt-get update -qq && \
